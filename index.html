@@ -1,0 +1,110 @@
+<!--
+ * @Autor: ErioY
+ * @Date: 2019-10-13 21:10:40
+ * @Email: 1973545559@qq.com
+ * @Github: https://github.com/ErioY
+ * @LastEditors: ErioY
+ * @LastEditTime: 2019-10-13 21:13:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态操作tab栏</title>
+    <!-- 引入奥森图标 -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <style>
+    .tabbox {
+        width: 600px;
+        height: 400px;
+        border: 1px #000 solid;
+        margin: 50px auto;
+    }
+    .firstnav {
+        width: 100%;
+        height: 40px;
+        /* border-bottom: 1px #000 solid; */
+        position: relative;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+    }
+    ul>li {
+        width: 80px;
+        height: 40px;
+        float: left;
+        border-right: 1px #000 solid;
+        border-bottom: 1px #000 solid;
+        text-align: center;
+        line-height: 40px;
+        font-size: 17px;
+        cursor: pointer;
+        position: relative;
+    }
+    ul>li>span:nth-last-of-type(1) {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .liActive {
+        border-bottom: none;
+    }
+    .conActive {
+        width: 80%;
+        height: 100px;
+    }
+    section:not(.conActive) {
+        display: none;
+    }
+    .tabAdd {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .tabContent {
+        width: 100%;
+        height: 359px;
+    }
+    .firstnav ul .liActive span:first-child input {
+        width: 80px;
+        height: 17px;
+    }
+    </style>
+</head>
+<body>
+    <div class="tabbox" id="tab">
+        <!-- tab 标签 -->
+        <nav class="firstnav">
+            <ul>
+                <li class="liActive"><span>测试1</span><span class="fa fa-window-close"></span></li>
+                <li><span>测试2</span><span  class="fa fa-window-close"></span></li>
+                <li><span>测试3</span><span  class="fa fa-window-close"></span></li>
+            </ul>
+            <!-- “+” 图标 -->
+            <div class="tabAdd">
+                <span class="fa fa-plus-square"></span>
+            </div>
+        </nav>
+
+        <!-- tab 内容 -->
+        <div class="tabContent">
+            <section class="conActive">测试1</section>
+            <section>测试2</section>
+            <section>测试3</section>
+        </div>
+    </div>
+    <script src = "js/tab.js "></script>
+    <script>
+    // (1) 切换 tab栏
+    // (2) 增加：点击"+"时动态添加标签页
+    // (3) 删除：点击"×"时删除对应的tab栏
+    // (4) 修改：双击改变tab栏名字和对应的内容
+    </script>
+</body>
+</html>
